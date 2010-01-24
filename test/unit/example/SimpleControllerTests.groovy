@@ -24,7 +24,7 @@ class SimpleControllerTests extends ControllerUnitTestCase {
 
     // This failes however same integration test works
     mockCommandObject(SimpleCommand)
-    mockParams['name'] = 'Random Name'
+    mockParams['simple.name'] = 'Random Name'
     def model = controller.save()
     assertNotNull model
     assertNull "Random Name" , model.command?.name

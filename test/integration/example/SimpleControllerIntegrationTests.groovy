@@ -13,6 +13,8 @@ class SimpleControllerIntegrationTests extends GroovyTestCase {
     SimpleController controller = new SimpleController()
     controller.params['name'] = "Stephen Smithstone"
     // This works without the command object as its an integration test
-    controller.save()
+    def model = controller.save()
+
+    assertEquals "Stephen Smithstone", model.command.name
   }
 }
